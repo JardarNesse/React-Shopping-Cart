@@ -162,8 +162,10 @@ button.view-cart:active
     width: 100%;
     max-width: 280px;
 
-    background: black;
+    background-image: url(../img/Matrix.gif);
+    
     color: white;
+    font-family: "Courier new";
     box-shadow: 0 0 5px rgba(0,0,0,.5);
     border: 1px solid #2c3e50;
 }
