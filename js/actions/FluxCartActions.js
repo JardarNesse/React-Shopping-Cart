@@ -29,6 +29,14 @@ var FluxCartActions = {
     })
   },
 
+  logAddToCart: function(sku, update) {
+    AppDispatcher.handleAction({
+      actionType: FluxCartConstants.LOG_CART_ADD,
+      sku: sku,
+      update: update
+    })
+  },
+
   // Remove item from cart
   removeFromCart: function(sku) {
     AppDispatcher.handleAction({

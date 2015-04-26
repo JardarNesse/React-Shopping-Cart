@@ -13,6 +13,7 @@ var FluxProduct = React.createClass({
       price: this.props.selected.price
     }
     FluxCartActions.addToCart(sku, update);
+    FluxCartActions.logAddToCart(sku, update);
     FluxCartActions.updateCartVisible(true);
   },
 

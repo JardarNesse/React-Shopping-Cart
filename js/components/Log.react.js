@@ -12,7 +12,7 @@ var Log = React.createClass({
 
     return (
       <div className={"log"}>
-          Eventlog: <br />
+          Eventlog:<br />
   		  <ul>
           {Object.keys(events).map(function(item){
             return (

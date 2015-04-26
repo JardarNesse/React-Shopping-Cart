@@ -156,17 +156,11 @@ button.view-cart:active
 {
     position: absolute;
     z-index: 999;
-    top: 42px;
+    top: 40px;
     left: 20px;
 
     width: 100%;
     max-width: 280px;
-
-    -webkit-transition: .5s right ease;
-       -moz-transition: .5s right ease;
-        -ms-transition: .5s right ease;
-         -o-transition: .5s right ease;
-            transition: .5s right ease;
 
     background: white;
     box-shadow: 0 0 5px rgba(0,0,0,.5);
