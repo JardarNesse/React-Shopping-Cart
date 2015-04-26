@@ -37,7 +37,8 @@ section#flux-cart
     margin: 20px auto;
     padding: 20px;
 
-    border: 5px solid #2c3e50;
+    border: 1px solid #2c3e50;
+    box-shadow: 0 0 5px rgba(0,0,0,.5);
     background: white;
 }
 
@@ -134,40 +135,42 @@ button.view-cart:active
 {
     position: absolute;
     z-index: 999;
-    top: 20px;
+    top: 40px;
     right: -500px;
 
     width: 100%;
     max-width: 280px;
 
-    -webkit-transition: .25s right ease;
-       -moz-transition: .25s right ease;
-        -ms-transition: .25s right ease;
-         -o-transition: .25s right ease;
-            transition: .25s right ease;
+    -webkit-transition: .5s right ease;
+       -moz-transition: .5s right ease;
+        -ms-transition: .5s right ease;
+         -o-transition: .5s right ease;
+            transition: .5s right ease;
 
     background: white;
     box-shadow: 0 0 5px rgba(0,0,0,.5);
+    border: 1px solid #2c3e50;
 }
 
 .log
 {
     position: absolute;
     z-index: 999;
-    top: 20px;
+    top: 42px;
     left: 20px;
 
     width: 100%;
     max-width: 280px;
 
-    -webkit-transition: .25s right ease;
-       -moz-transition: .25s right ease;
-        -ms-transition: .25s right ease;
-         -o-transition: .25s right ease;
-            transition: .25s right ease;
+    -webkit-transition: .5s right ease;
+       -moz-transition: .5s right ease;
+        -ms-transition: .5s right ease;
+         -o-transition: .5s right ease;
+            transition: .5s right ease;
 
     background: white;
     box-shadow: 0 0 5px rgba(0,0,0,.5);
+    border: 1px solid #2c3e50;
 }
 
 .active .mini-cart
@@ -247,18 +250,6 @@ button.view-cart:active
     box-shadow: none;
 }
 
-@media (max-width: 1280px)
-{
-    button.view-cart
-    {
-        position: relative;
-        top: auto;
-        right: auto;
-
-        width: 100%;
-    }
-}
-
 @media (max-width: 600px)
 {
     .flux-product img,
@@ -279,29 +270,7 @@ button.view-cart:active
         max-width: 100%;
 
     }
-    .mini-cart .close-cart
-    {
-        font-size: 0;
 
-        position: relative;
-        top: auto;
-        right: auto;
-
-        width: 100%;
-        padding: 20px 0;
-
-        border-radius: 0;
-    }
-    .mini-cart .close-cart:after
-    {
-        font-size: 14px;
-
-        content: 'Close Cart';
-    }
-    .mini-cart .close-cart:active
-    {
-        border-top: none;
-    }
     .active .mini-cart
     {
         right: 0;
