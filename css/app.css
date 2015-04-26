@@ -150,6 +150,26 @@ button.view-cart:active
     box-shadow: 0 0 5px rgba(0,0,0,.5);
 }
 
+.log
+{
+    position: absolute;
+    z-index: 999;
+    top: 20px;
+    left: 20px;
+
+    width: 100%;
+    max-width: 280px;
+
+    -webkit-transition: .25s right ease;
+       -moz-transition: .25s right ease;
+        -ms-transition: .25s right ease;
+         -o-transition: .25s right ease;
+            transition: .25s right ease;
+
+    background: white;
+    box-shadow: 0 0 5px rgba(0,0,0,.5);
+}
+
 .active .mini-cart
 {
     right: 20px;
