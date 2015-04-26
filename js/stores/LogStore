@@ -7,7 +7,7 @@ var _ = require('underscore');
 var _events = [];
 
 function logItemAddedEvent(data) {
-  _events[_events.length] = data;
+  _events[_events.length] = 'Produkt lagt til i handlekurv: ' + data.type + ', pris (NOK) ' + data.price + '.';
 }
 
 function logItemRemovedEvent(data) {

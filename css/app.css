@@ -162,7 +162,8 @@ button.view-cart:active
     width: 100%;
     max-width: 280px;
 
-    background: white;
+    background: black;
+    color: white;
     box-shadow: 0 0 5px rgba(0,0,0,.5);
     border: 1px solid #2c3e50;
 }
