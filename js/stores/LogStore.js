@@ -7,11 +7,11 @@ var _ = require('underscore');
 var _events = [];
 
 function logItemAddedEvent(data) {
-  _events[_events.length] = 'Produkt lagt til i handlekurv: ' + data.type + ', pris (NOK) ' + data.price + '.';
+  _events[_events.length] = 'Produkt ' + data.sku + ' lagt til i handlekurv: ' + data.type + ', pris (NOK) ' + data.price + '.';
 }
 
 function logItemRemovedEvent(data) {
-  _events[_events.length] = data;
+  _events[_events.length] = data.action + '. ProductId: ' + data.sku; 
 }
 
 // Extend LogStore with EventEmitter to add eventing capabilities
@@ -42,9 +42,9 @@ AppDispatcher.register(function(payload) {
     logItemAddedEvent(action.update);  
   }
 
-/*  if (action.actionType === FluxCartConstants.LOG_ITEM_REMOVED){
-    logItemRemovedEvent(action.update);  
-  }*/
+  if (action.actionType === FluxCartConstants.LOG_ITEM_REMOVED){
+    logItemRemovedEvent(action);  
+  }
 
   return true;
 

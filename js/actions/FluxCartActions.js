@@ -45,6 +45,15 @@ var FluxCartActions = {
     })
   },
 
+    // Log remove item from cart
+  logRemoveFromCart: function(sku) {
+    AppDispatcher.handleAction({
+      actionType: FluxCartConstants.LOG_ITEM_REMOVED,
+      sku: sku,
+      action: 'Produkt fjernet fra handlekurv'
+    })
+  },
+
   // Update cart visibility status
   updateCartVisible: function(cartVisible) {
     AppDispatcher.handleAction({

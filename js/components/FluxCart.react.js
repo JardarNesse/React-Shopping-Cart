@@ -7,6 +7,7 @@ var FluxCart = React.createClass({
   // Remove item from Cart via Actions
   removeFromCart: function(sku){
     FluxCartActions.removeFromCart(sku);
+    FluxCartActions.logRemoveFromCart(sku);
     FluxCartActions.updateCartVisible(false);
   },
 

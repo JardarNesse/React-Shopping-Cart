@@ -7,5 +7,6 @@ module.exports = keyMirror({
   CART_VISIBLE: null,
   SET_SELECTED: null,
   RECEIVE_DATA: null,
-  LOG_CART_ADD: null
+  LOG_CART_ADD: null,
+  LOG_ITEM_REMOVED: null
 });

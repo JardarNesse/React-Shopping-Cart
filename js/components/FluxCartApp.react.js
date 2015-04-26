@@ -17,7 +17,6 @@ function getCartState() {
     cartTotal: CartStore.getCartTotal(),
     cartVisible: CartStore.getCartVisible(),
     logItems: LogStore.getLogItems()
-    
   };
 }
 
