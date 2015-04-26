@@ -24,7 +24,7 @@ var FluxCart = React.createClass({
   render: function() {
     var self = this, products = this.props.products;
     return (
-      <div className={"flux-cart " + (this.props.visible ? 'active' : '')}>
+      <div className={"flux-cart " + (this.props.count > 0 ? 'active' : '')}>
         <div className="mini-cart">
           <button type="button" className="close-cart" onClick={this.closeCart}>&times;</button>
           <ul>
