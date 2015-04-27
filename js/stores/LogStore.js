@@ -7,11 +7,11 @@ var _ = require('underscore');
 var _events = [];
 
 function logItemAddedEvent(data) {
-  _events[_events.length] = 'Produkt ' + data.sku + ' lagt til i handlekurv: ' + data.type + ', pris (NOK) ' + data.price + '.';
+  _events[_events.length] = data.type + ' ble lagt til i handlekurv (' + data.sku + '), pris (NOK) ' + data.price + '.';
 }
 
 function logItemRemovedEvent(data) {
-  _events[_events.length] = 'Produkter med produkt id ' + data.sku + ' ble fjernet fra handlekurv.';
+  _events[_events.length] = data.name + '-produktene (' + data.sku + ') ble fjernet fra handlekurv.';
 }
 
 // Extend LogStore with EventEmitter to add eventing capabilities

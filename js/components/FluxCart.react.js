@@ -5,9 +5,9 @@ var FluxCartActions = require('../actions/FluxCartActions');
 var FluxCart = React.createClass({
 
   // Remove item from Cart via Actions
-  removeFromCart: function(sku){
+  removeFromCart: function(sku, name){
     FluxCartActions.removeFromCart(sku);
-    FluxCartActions.logRemoveFromCart(sku);
+    FluxCartActions.logRemoveFromCart(sku, name);
     FluxCartActions.updateCartVisible(false);
   },
 
@@ -24,7 +24,7 @@ var FluxCart = React.createClass({
                   <h1 className="name">{products[product].name}</h1>
                   <p className="type">{products[product].type} x {products[product].quantity}</p>
                   <p className="price">{(products[product].price * products[product].quantity).toFixed(2)} kr</p>
-                  <button type="button" className="remove-item" onClick={self.removeFromCart.bind(self, product)}>Ta bort</button>
+                  <button type="button" className="remove-item" onClick={self.removeFromCart.bind(self, product, products[product].type)}>Ta bort</button>
                 </li>
               )
             })}
