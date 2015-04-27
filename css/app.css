@@ -162,8 +162,8 @@ button.view-cart:active
     width: 100%;
     max-width: 280px;
 
-    background-image: url(../img/Matrix.gif);
-    opacity: 0.4;
+    background-image: url(../img/Matrix.png);
+    opacity: 0.6;
     
     color: white;
     font-family: "Courier new";

@@ -49,8 +49,7 @@ var FluxCartActions = {
   logRemoveFromCart: function(sku) {
     AppDispatcher.handleAction({
       actionType: FluxCartConstants.LOG_ITEM_REMOVED,
-      sku: sku,
-      action: 'Produkt fjernet fra handlekurv'
+      sku: sku
     })
   },
 
