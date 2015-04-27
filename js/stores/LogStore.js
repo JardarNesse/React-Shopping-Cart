@@ -11,7 +11,7 @@ function logItemAddedEvent(data) {
 }
 
 function logItemRemovedEvent(data) {
-  _events[_events.length] = data.name + '-produktene (' + data.sku + ') ble fjernet fra handlekurv.';
+  _events[_events.length] = data.type + '-produktene (' + data.sku + ') ble fjernet fra handlekurv.';
 }
 
 // Extend LogStore with EventEmitter to add eventing capabilities
