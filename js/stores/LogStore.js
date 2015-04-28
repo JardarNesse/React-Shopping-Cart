@@ -5,7 +5,7 @@ var _ = require('underscore');
 
 // Define initial data points
 var _events = [];
-var logVisible = false;
+var logVisible = true;
 
 function logItemAddedEvent(data) {
   _events.unshift (data.type + ' ble lagt til i handlekurv (' + data.sku + '), pris (NOK) ' + data.price + '.');
@@ -32,7 +32,7 @@ var LogStore = _.extend({}, EventEmitter.prototype, {
     return _events;
   },
 
-  shouldDisplayLog: function() {
+  getLogVisible: function() {
     return logVisible;
   },
 

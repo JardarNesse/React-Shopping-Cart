@@ -62,10 +62,9 @@ var FluxCartActions = {
     })
   },
 
-  toggleLog: function(logVisible){
+  toggleLog: function(){
       AppDispatcher.handleAction({
-      actionType: FluxCartConstants.TOGGLE_LOG,
-      logVisible: logVisible
+      actionType: FluxCartConstants.TOGGLE_LOG
     })
   }
 };
