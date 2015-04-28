@@ -31,7 +31,6 @@ var FluxProduct = React.createClass({
   // Render product View
   render: function() {
     var logVisible = logStore.getLogVisible();
-    if (logVisible == undefined) alert('logVisible er udefinert');
     var ats = (this.props.selected.sku in this.props.cartitems) ?
       this.props.selected.inventory - this.props.cartitems[this.props.selected.sku].quantity :
       this.props.selected.inventory;
