@@ -1,3 +1,5 @@
+// view
+
 var React = require('react');
 
 var Log = React.createClass({
