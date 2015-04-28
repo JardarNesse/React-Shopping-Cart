@@ -37,7 +37,7 @@ var FluxProduct = React.createClass({
     return (
       <div>
         <div>
-         <button type="Button" onClick={this.toggleLog} className="toggleLog">{logVisible ? "Skjul hendelser" : "Vis hendelser"}</button>
+         <a href="#" type="a" onClick={this.toggleLog} className="toggleLog">{logVisible ? "Skjul hendelser" : "Vis hendelser"}</a>
         </div>
 
         <div className="flux-product">

@@ -10,17 +10,17 @@ module.exports = {
         description: 'Velg blandt våre forsikringer',
         variants: [
           {
+            sku: '123124',
+            type: 'Ulykke',
+            price: 300.00,
+            inventory: 10
+          },
+          {
             sku: '123123',
             type: 'Reise',
             price: 250.00,
             inventory: 6
 
-          },
-          {
-            sku: '123124',
-            type: 'Ulykke',
-            price: 300.00,
-            inventory: 10
           },
           {
             sku: '1231235',

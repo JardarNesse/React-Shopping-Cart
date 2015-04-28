@@ -142,6 +142,14 @@ button.toggleLog
     margin: 0 auto;
 }
 
+a.toggleLog
+{
+    display: inline-block;
+    position: absolute;
+    top: 340px;
+    left: 340px;
+}
+
 .mini-cart
 {
     position: absolute;
