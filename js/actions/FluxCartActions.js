@@ -60,8 +60,14 @@ var FluxCartActions = {
       actionType: FluxCartConstants.CART_VISIBLE,
       cartVisible: cartVisible
     })
-  }
+  },
 
+  toggleLog: function(logVisible){
+      AppDispatcher.handleAction({
+      actionType: FluxCartConstants.TOGGLE_LOG,
+      logVisible: logVisible
+    })
+  }
 };
 
 module.exports = FluxCartActions;

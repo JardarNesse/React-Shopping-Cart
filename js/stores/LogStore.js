@@ -5,6 +5,7 @@ var _ = require('underscore');
 
 // Define initial data points
 var _events = [];
+var logVisible = false;
 
 function logItemAddedEvent(data) {
   _events.unshift (data.type + ' ble lagt til i handlekurv (' + data.sku + '), pris (NOK) ' + data.price + '.');
@@ -14,12 +15,25 @@ function logItemRemovedEvent(data) {
   _events.unshift(data.type + '-produktene (' + data.sku + ') ble fjernet fra handlekurv.');
 }
 
+function toggleLogVisability(data){
+  logVisible = !logVisible;
+}
+
 // Extend LogStore with EventEmitter to add eventing capabilities
 var LogStore = _.extend({}, EventEmitter.prototype, {
+
+ // Emit Change event
+  emitChange: function() {
+    this.emit('change');
+  },
 
   // Return events data
   getLogItems: function() {
     return _events;
+  },
+
+  shouldDisplayLog: function() {
+    return logVisible;
   },
 
   // Add change listener
@@ -46,6 +60,12 @@ AppDispatcher.register(function(payload) {
     logItemRemovedEvent(action);  
   }
 
+  if (action.actionType === FluxCartConstants.TOGGLE_LOG ){
+      toggleLogVisability(action.actionType);
+  }
+  // If action was responded to, emit change event
+  LogStore.emitChange();
+  
   return true;
 
 });

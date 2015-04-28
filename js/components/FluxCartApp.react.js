@@ -16,7 +16,8 @@ function getCartState() {
     cartCount: CartStore.getCartCount(),
     cartTotal: CartStore.getCartTotal(),
     cartVisible: CartStore.getCartVisible(),
-    logItems: LogStore.getLogItems()
+    logItems: LogStore.getLogItems(),
+    logVisible: LogStore.shouldDisplayLog()
   };
 }
 
@@ -32,12 +33,14 @@ var FluxCartApp = React.createClass({
   componentDidMount: function() {
     ProductStore.addChangeListener(this._onChange);
     CartStore.addChangeListener(this._onChange);
+    LogStore.addChangeListener(this._onChange);
   },
 
   // Remove change listers from stores
   componentWillUnmount: function() {
     ProductStore.removeChangeListener(this._onChange);
     CartStore.removeChangeListener(this._onChange);
+    LogStore.removeChangeListener(this._onChange);
   },
 
   // Render our child components, passing state via props
@@ -46,7 +49,7 @@ var FluxCartApp = React.createClass({
       <div className="flux-cart-app">
         <FluxCart products={this.state.cartItems} count={this.state.cartCount} total={this.state.cartTotal} visible={this.state.cartVisible} />
         <FluxProduct product={this.state.product} cartitems={this.state.cartItems} selected={this.state.selectedProduct} />
-        <Log _events={this.state.logItems} />
+        <Log _events={this.state.logItems} visible={this.state.logVisible}/>
       </div>
   	);
   },

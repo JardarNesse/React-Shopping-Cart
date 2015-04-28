@@ -1,5 +1,6 @@
 var React = require('react');
 var FluxCartActions = require('../actions/FluxCartActions');
+var logStore = require('../stores/LogStore');
 
 // Flux product view
 var FluxProduct = React.createClass({
@@ -18,6 +19,14 @@ var FluxProduct = React.createClass({
     FluxCartActions.updateCartVisible(true);
   },
 
+  toggleLog: function(event){
+    FluxCartActions.toggleLog(logStore.shouldDisplayLog());
+  },
+
+  /*logVisible: function(){
+    return true;
+  },*/
+
   // Select product variation via Actions
   selectVariant: function(event){
     FluxCartActions.selectProduct(event.target.value);
@@ -25,31 +34,37 @@ var FluxProduct = React.createClass({
 
   // Render product View
   render: function() {
+    var logVisible = logStore.shouldDisplayLog();
     var ats = (this.props.selected.sku in this.props.cartitems) ?
       this.props.selected.inventory - this.props.cartitems[this.props.selected.sku].quantity :
       this.props.selected.inventory;
     return (
-      <div className="flux-product">
-        <img src={'img/' + this.props.product.image}/>
-        <div className="flux-product-detail">
-          <h1 className="name">{this.props.product.name}</h1>
-          <p className="description">{this.props.product.description}</p>
-          <p className="price">Pris: NOK{this.props.selected.price}</p>
-          <select onChange={this.selectVariant}>
-            {this.props.product.variants.map(function(variant, index){
-              return (
-                <option key={index} value={index}>{variant.type}</option>
-              )
-            })}
-          </select>
-          <button type="button" onClick={this.addToCart} disabled={ats  > 0 ? '' : 'disabled'}>
-            {ats > 0 ? 'Legg i handlekurv' : 'Lagt i handlekurv'}
-          </button>
+      <div>
+        <div>
+         <button type="Button" onClick={this.toggleLog} className="toggleLog">{logVisible ? "Skjul hendelser" : "Vis hendelser"}</button>
         </div>
+
+        <div className="flux-product">
+          <img src={'img/' + this.props.product.image}/>
+          <div className="flux-product-detail">
+            <h1 className="name">{this.props.product.name}</h1>
+            <p className="description">{this.props.product.description}</p>
+            <p className="price">Pris: NOK{this.props.selected.price}</p>
+            <select onChange={this.selectVariant}>
+              {this.props.product.variants.map(function(variant, index){
+                return (
+                  <option key={index} value={index}>{variant.type}</option>
+                )
+              })}
+            </select>
+            <button type="button" onClick={this.addToCart} disabled={ats  > 0 ? '' : 'disabled'}>
+              {ats > 0 ? 'Legg i handlekurv' : 'Lagt i handlekurv'}
+            </button>
+          </div>
+        </div>   
       </div>
     );
   },
-
 });
 
 module.exports = FluxProduct;
