@@ -49,7 +49,7 @@ var FluxCartApp = React.createClass({
       <div className="flux-cart-app">
         <FluxCart products={this.state.cartItems} count={this.state.cartCount} total={this.state.cartTotal} visible={this.state.cartVisible} />
         <FluxProduct product={this.state.product} cartitems={this.state.cartItems} selected={this.state.selectedProduct} />
-        <Log _events={this.state.logItems} visible={this.state.logVisible}/>
+        <Log events={this.state.logItems} logVisible={this.state.logVisible}/>
       </div>
   	);
   },

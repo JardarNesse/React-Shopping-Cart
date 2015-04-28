@@ -4,8 +4,8 @@ var Log = React.createClass({
 
   render: function() {
 
-  	var events = this.props._events;
-    var logVisible = this.props.visible;
+  	var events = this.props.events;
+    var logVisible = this.props.logVisible;
 
     if (events[0] == undefined) {
       return <div></div>;
