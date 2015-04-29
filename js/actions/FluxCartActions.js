@@ -4,6 +4,13 @@ var FluxCartConstants = require('../constants/FluxCartConstants');
 // Define action methods
 var FluxCartActions = {
 
+  setCheckoutInformation: function(data) {
+    AppDispatcher.handleAction({
+      actionType: FluxCartConstants.SET_CHECKOUT_DATA,
+      data: data
+    })
+  },
+
   // Receive inital product data
   receiveProduct: function(data) {
     AppDispatcher.handleAction({

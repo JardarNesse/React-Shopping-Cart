@@ -6,10 +6,40 @@ var FluxCartConstants = require('../constants/FluxCartConstants');
 var _ = require('underscore');
 
 // Define initial data points
-var checkoutVisible = false;
+var checkoutVisible = true;
+var customer = {
+      firstName: '',
+      lastName: '',
+      address: '',
+      mobile: '',
+      email: ''
+    };
 
 function toggleVisability(data){
   checkoutVisible = !checkoutVisible;
+}
+
+function setCheckoutData(data){
+
+  var value = data.value;
+
+  switch(data.name){
+    case 'firstName':
+      customer.firstName = data.value;
+      break;
+     case ('lastName'):
+      customer.lastName = data.value;
+      break;
+     case ('address'):
+      customer.address = data.value;
+      break;
+     case ('mobile'):
+      customer.mobile = data.value;
+      break;
+     case ('email'):
+      customer.email = data.value;
+      break;                  
+  }
 }
 
 // Extend CheckoutStore with EventEmitter to add eventing capabilities
@@ -22,6 +52,10 @@ var CheckoutStore = _.extend({}, EventEmitter.prototype, {
 
   getCheckoutVisible: function() {
     return checkoutVisible;
+  },
+
+  getData: function(){
+      return customer;
   },
 
   // Add change listener
@@ -42,6 +76,10 @@ AppDispatcher.register(function(payload) {
 
   if (action.actionType === FluxCartConstants.TOGGLE_CHECKOUT){
       toggleVisability(action.actionType);
+  }
+
+  if(action.actionType === FluxCartConstants.SET_CHECKOUT_DATA){
+    setCheckoutData(action.data);   
   }
 
   // If action was responded to, emit change event
