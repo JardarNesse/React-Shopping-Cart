@@ -21,8 +21,6 @@ function toggleVisability(data){
 
 function setCheckoutData(data){
 
-  var value = data.value;
-
   switch(data.name){
     case 'firstName':
       customer.firstName = data.value;
