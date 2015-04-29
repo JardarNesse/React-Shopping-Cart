@@ -9,5 +9,6 @@ module.exports = keyMirror({
   RECEIVE_DATA: null,
   LOG_CART_ADD: null,
   LOG_ITEM_REMOVED: null,
-  TOGGLE_LOG: null
+  TOGGLE_LOG: null,
+  TOGGLE_CHECKOUT: null
 });

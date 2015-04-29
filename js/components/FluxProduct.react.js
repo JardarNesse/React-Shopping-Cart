@@ -23,6 +23,10 @@ var FluxProduct = React.createClass({
     FluxCartActions.toggleLog(this.props.visible);
   },
 
+  toggleCheckout: function(event){
+    FluxCartActions.toggleCheckout(this.props.visible);
+  },
+
   // Select product variation via Actions
   selectVariant: function(event){
     FluxCartActions.selectProduct(event.target.value);
@@ -36,10 +40,6 @@ var FluxProduct = React.createClass({
       this.props.selected.inventory;
     return (
       <div>
-        <div>
-         <a href="#" type="a" onClick={this.toggleLog} className="toggleLog">{logVisible ? "Skjul hendelser" : "Vis hendelser"}</a>
-        </div>
-
         <div className="flux-product">
           <img src={'img/' + this.props.product.image}/>
           <div className="flux-product-detail">
@@ -58,6 +58,11 @@ var FluxProduct = React.createClass({
             </button>
           </div>
         </div>   
+
+        <div>
+         <a href="#" type="a" onClick={this.toggleLog} className="toggleLog">{logVisible ? "Skjul hendelser" : "Vis hendelser"}</a>
+         <a href="#" type="a" onClick={this.toggleCheckout} className="toggleCheckout">Utsjekk</a>
+        </div>
       </div>
     );
   },

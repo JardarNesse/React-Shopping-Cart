@@ -7,6 +7,8 @@ var FluxProduct = require('./FluxProduct.react');
 var FluxCart = require('./FluxCart.react');
 var Log = require('./Log.react');
 var LogStore = require('../stores/LogStore');
+var Checkout = require('./Checkout');
+var CheckoutStore = require('../stores/CheckoutStore');
 
 // Method to retrieve state from Stores
 function getCartState() {
@@ -19,7 +21,8 @@ function getCartState() {
     cartTotal: CartStore.getCartTotal(),
     cartVisible: CartStore.getCartVisible(),
     logItems: LogStore.getLogItems(),
-    logVisible: LogStore.getLogVisible()
+    logVisible: LogStore.getLogVisible(),
+    checkoutVisible: CheckoutStore.getCheckoutVisible()
   };
 }
 
@@ -36,6 +39,7 @@ var FluxCartApp = React.createClass({
     ProductStore.addChangeListener(this._onChange);
     CartStore.addChangeListener(this._onChange);
     LogStore.addChangeListener(this._onChange);
+    CheckoutStore.addChangeListener(this._onChange);
   },
 
   // Remove change listers from stores
@@ -43,6 +47,7 @@ var FluxCartApp = React.createClass({
     ProductStore.removeChangeListener(this._onChange);
     CartStore.removeChangeListener(this._onChange);
     LogStore.removeChangeListener(this._onChange);
+    CheckoutStore.removeChangeListener(this._onChange);
   },
 
   // Render our child components, passing state via props
@@ -50,8 +55,9 @@ var FluxCartApp = React.createClass({
   	return (
       <div className="flux-cart-app">
         <FluxCart products={this.state.cartItems} count={this.state.cartCount} total={this.state.cartTotal} visible={this.state.cartVisible} />
-        <FluxProduct product={this.state.product} cartitems={this.state.cartItems} selected={this.state.selectedProduct} />
+        <FluxProduct product={this.state.product} cartitems={this.state.cartItems} selected={this.state.selectedProduct} bankId={this.state.bankIdVisible}/>
         <Log events={this.state.logItems} logVisible={this.state.logVisible}/>
+        <Checkout visible={this.state.checkoutVisible}/>
       </div>
   	);
   },

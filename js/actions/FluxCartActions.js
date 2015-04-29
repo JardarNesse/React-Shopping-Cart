@@ -66,7 +66,14 @@ var FluxCartActions = {
       AppDispatcher.handleAction({
       actionType: FluxCartConstants.TOGGLE_LOG
     })
+  },
+
+  toggleCheckout: function(){
+      AppDispatcher.handleAction({
+      actionType: FluxCartConstants.TOGGLE_CHECKOUT
+    })
   }
+  
 };
 
 module.exports = FluxCartActions;
