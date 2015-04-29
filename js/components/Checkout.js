@@ -5,10 +5,6 @@ var FluxCartActions = require('../actions/FluxCartActions');
 
 var Checkout = React.createClass({
 
-  toggleCheckout: function(event){
-    FluxCartActions.toggleCheckout(this.props.visible);
-  },
-
   setValues: function(event){
     FluxCartActions.setCheckoutInformation(event.target);
   },
