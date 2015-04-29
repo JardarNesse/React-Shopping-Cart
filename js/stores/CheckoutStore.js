@@ -6,7 +6,7 @@ var FluxCartConstants = require('../constants/FluxCartConstants');
 var _ = require('underscore');
 
 // Define initial data points
-var checkoutVisible = true;
+var checkoutVisible = false;
 var customer = {
       firstName: '',
       lastName: '',
