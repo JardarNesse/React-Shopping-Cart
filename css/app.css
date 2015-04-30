@@ -208,9 +208,9 @@ a.toggleCheckout
     width: 280px;
     height: 185px;
 
-    background: ligth-gray;
+    background: #D0D0D0;
     box-shadow: 0 0 5px rgba(0,0,0,.5);
-    border: 1px dotted #2c3e50;
+    border: 1px dashed #2c3e50;
 }
 
 .checkout-view span
