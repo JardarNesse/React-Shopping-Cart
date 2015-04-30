@@ -60,8 +60,8 @@ var FluxProduct = React.createClass({
         </div>   
 
         <div>
+         <a href="#" type="a" onClick={this.toggleCheckout} className="toggleCheckout">Endre kontaktinformasjon</a>
          <a href="#" type="a" onClick={this.toggleLog} className="toggleLog">{logVisible ? "Skjul hendelser" : "Vis hendelser"}</a>
-         <a href="#" type="a" onClick={this.toggleCheckout} className="toggleCheckout">Utsjekk</a>
         </div>
       </div>
     );

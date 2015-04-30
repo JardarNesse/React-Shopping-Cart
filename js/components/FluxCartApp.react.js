@@ -8,6 +8,7 @@ var FluxCart = require('./FluxCart.react');
 var Log = require('./Log.react');
 var LogStore = require('../stores/LogStore');
 var Checkout = require('./Checkout');
+var CheckoutView = require('./CheckoutView');
 var CheckoutStore = require('../stores/CheckoutStore');
 
 // Method to retrieve state from Stores
@@ -59,6 +60,7 @@ var FluxCartApp = React.createClass({
         <FluxProduct product={this.state.product} cartitems={this.state.cartItems} selected={this.state.selectedProduct} bankId={this.state.bankIdVisible}/>
         <Log events={this.state.logItems} logVisible={this.state.logVisible}/>
         <Checkout visible={this.state.checkoutVisible} data={this.state.data}/>
+        <CheckoutView data={this.state.data}/>
       </div>
   	);
   },

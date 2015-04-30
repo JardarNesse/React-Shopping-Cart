@@ -147,7 +147,16 @@ a.toggleLog
     display: inline-block;
     position: absolute;
     top: 340px;
-    left: 340px;
+    left: 835px;
+}
+
+
+a.toggleCheckout 
+{
+    display: inline-block;
+    position: absolute;
+    top: 340px;
+    left: 340px; 
 }
 
 .mini-cart
@@ -171,26 +180,9 @@ a.toggleLog
     border: 1px solid #2c3e50;
 }
 
-a.toggleCheckout 
-{
-    display: inline-block;
-    position: absolute;
-    top: 360px;
-    left: 340px; 
-}
-
 .hidden
 {
     display:none;
-}
-
-img.bankid
-{
-    display: inline-block;
-    position: absolute;
-    top: 385px;
-    left: 340px; 
-    width: 500px;
 }
 
 .checkout
@@ -200,16 +192,39 @@ img.bankid
     top: 385px;
     left: 340px; 
     width: 300px;
-
-    -webkit-transition: .5s right ease;
-       -moz-transition: .5s right ease;
-        -ms-transition: .5s right ease;
-         -o-transition: .5s right ease;
-            transition: .5s right ease;
+    height: 185px;
 
     background: white;
     box-shadow: 0 0 5px rgba(0,0,0,.5);
     border: 1px solid #2c3e50;
+}
+
+.checkout-view
+{
+    position: absolute;
+    z-index: 999;
+    top: 385px;
+    left: 660px; 
+    width: 280px;
+    height: 185px;
+
+    background: ligth-gray;
+    box-shadow: 0 0 5px rgba(0,0,0,.5);
+    border: 1px dotted #2c3e50;
+}
+
+.checkout-view span
+{
+    font-size: 12px;
+    position: relative;
+    left: 15px;
+}
+
+.checkout-view h1
+{
+    font-size: 16px;
+    position: relative;
+    left: 10px;
 }
 
 .checkout h1
