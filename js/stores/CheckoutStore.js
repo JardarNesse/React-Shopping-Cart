@@ -70,14 +70,13 @@ var CheckoutStore = _.extend({}, EventEmitter.prototype, {
 
 // Register callback with AppDispatcher
 AppDispatcher.register(function(payload) {
-  var action = payload.action;
 
-  if (action.actionType === FluxCartConstants.TOGGLE_CHECKOUT){
-      toggleVisability(action.actionType);
+  if (payload.action.actionType === FluxCartConstants.TOGGLE_CHECKOUT){
+      toggleVisability(payload.action.actionType);
   }
 
-  if(action.actionType === FluxCartConstants.SET_CHECKOUT_DATA){
-    setCheckoutData(action.data);   
+  if(payload.action.actionType === FluxCartConstants.SET_CHECKOUT_DATA){
+    setCheckoutData(payload.action.data);   
   }
 
   // If action was responded to, emit change event
