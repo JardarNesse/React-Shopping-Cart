@@ -24,7 +24,7 @@ function getCartState() {
     logItems: LogStore.getLogItems(),
     logVisible: LogStore.getLogVisible(),
     checkoutVisible: CheckoutStore.getCheckoutVisible(),
-    data: CheckoutStore.getData()
+    customerInfo: CheckoutStore.getCustomerInformation()
   };
 }
 
@@ -59,8 +59,8 @@ var FluxCartApp = React.createClass({
         <FluxCart products={this.state.cartItems} count={this.state.cartCount} total={this.state.cartTotal} visible={this.state.cartVisible} />
         <FluxProduct product={this.state.product} cartitems={this.state.cartItems} selected={this.state.selectedProduct} bankId={this.state.bankIdVisible}/>
         <Log events={this.state.logItems} logVisible={this.state.logVisible}/>
-        <Checkout visible={this.state.checkoutVisible} data={this.state.data}/>
-        <CheckoutView data={this.state.data}/>
+        <Checkout visible={this.state.checkoutVisible} customerInfo={this.state.customerInfo}/>
+        <CheckoutView customerInfo={this.state.customerInfo}/>
       </div>
   	);
   },

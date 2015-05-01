@@ -6,7 +6,7 @@ var CheckoutView = React.createClass({
 
   render: function() {
 
-    var customerInfo = this.props.data;
+    var customerInfo = this.props.customerInfo;
     if (!customerInfo.firstName.length > 0){return false;}
     
     return (

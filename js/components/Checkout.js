@@ -13,7 +13,7 @@ var Checkout = React.createClass({
 
     if (!this.props.visible){return false;}
 
-    var data = this.props.data;
+    var data = this.props.customerInfo;
     
     return (
      <div className={"checkout"}>

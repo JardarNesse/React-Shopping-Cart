@@ -52,7 +52,7 @@ var CheckoutStore = _.extend({}, EventEmitter.prototype, {
     return checkoutVisible;
   },
 
-  getData: function(){
+  getCustomerInformation: function(){
       return customer;
   },
 
